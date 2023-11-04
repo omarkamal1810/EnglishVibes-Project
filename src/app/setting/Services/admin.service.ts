@@ -17,6 +17,20 @@ export class AdminService {
   }
 
 
+  getActiveStudent():Observable<any>{
+   return this._HttpClient.get("https://localhost:44385/api/Student/active/all")
+   
+  }
+
+
+  getWaitingList():Observable<any>{
+   return this._HttpClient.get("https://localhost:44385/api/Student/waitinglist")
+   
+  }
+
+
+
+
 
 
 
