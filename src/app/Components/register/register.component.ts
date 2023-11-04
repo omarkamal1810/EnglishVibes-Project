@@ -13,15 +13,8 @@ export class RegisterComponent {
   isloading: boolean = false;
   apierror: string = '';
   registerForm: FormGroup = new FormGroup({
-    FirstName: new FormControl(null, [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(8),
-    ]),
-    LastName: new FormControl(null, [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(8),
+    Age: new FormControl(null, [
+      Validators.required
     ]),
     UserName: new FormControl(),
     // Email: new FormControl(null, [Validators.required, Validators.email]),

@@ -15,4 +15,37 @@ export class AdminService {
   getActiveGroup(): Observable<any> {
     return this._HttpClient.get("https://localhost:44385/api/Group/active")
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  getinstructors(): Observable<any> {
+    return this._HttpClient.get("https://localhost:44385/api/Instructor")
+  }
+  getinstructorsid(): Observable<any> {
+    return this._HttpClient.get("https://localhost:44385/api/Instructor/{id}")
+  }
+
+
+  
+ 
 }

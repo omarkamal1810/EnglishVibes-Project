@@ -7,6 +7,7 @@ import { ActiveGroupComponent } from './active-group/active-group.component';
 import { ActiveStudentsComponent } from './active-students/active-students.component';
 import { WaitingListComponent } from './waiting-list/waiting-list.component';
 import { InactiveGroupComponent } from './inactive-group/inactive-group.component';
+import { InstructorsComponent } from './instructors/instructors.component';
 
 
 @NgModule({
@@ -15,12 +16,14 @@ import { InactiveGroupComponent } from './inactive-group/inactive-group.componen
     ActiveGroupComponent,
     ActiveStudentsComponent,
     WaitingListComponent,
-    InactiveGroupComponent
+    InactiveGroupComponent,
+    InstructorsComponent
   
   ],
   imports: [
     CommonModule,
-    SettingRoutingModule
+    SettingRoutingModule,
+    
   ]
 })
 export class SettingModule { }

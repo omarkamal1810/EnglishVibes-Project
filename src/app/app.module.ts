@@ -22,6 +22,9 @@ import {HttpClientModule} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './Components/contact/contact.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { CommonModule } from '@angular/common';
+import { SettingModule } from './setting/setting.module';
+
 
 
 @NgModule({
@@ -52,7 +55,9 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
     CarouselModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
