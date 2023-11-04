@@ -15,4 +15,10 @@ export class AdminService {
   getActiveGroup(): Observable<any> {
     return this._HttpClient.get("https://localhost:44385/api/Group/active")
   }
+
+
+  getActiveStudent():Observable<any>{
+   return this._HttpClient.get("https://localhost:44385/api/Student/active")
+
+  }
 }
