@@ -12,6 +12,7 @@ export class ActiveGroupComponent implements OnInit {
   ngOnInit(): void {
     this._AdminService.getActiveGroup().subscribe({
       next: (response) => {
+        console.log(response)
         this.allActiveGroup = response;
       }
     })
