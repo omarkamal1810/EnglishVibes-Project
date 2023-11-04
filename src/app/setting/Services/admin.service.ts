@@ -33,7 +33,7 @@ export class AdminService {
 
   
   getinstructors(): Observable<any> {
-    return this._HttpClient.get("https://localhost:44385/api/Instructor")
+    return this._HttpClient.get("https://localhost:44385/api/Instructor/all")
   }
   getinstructorsid(): Observable<any> {
     return this._HttpClient.get("https://localhost:44385/api/Instructor/{id}")
