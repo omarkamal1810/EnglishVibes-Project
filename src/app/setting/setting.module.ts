@@ -9,6 +9,7 @@ import { WaitingListComponent } from './waiting-list/waiting-list.component';
 import { InactiveGroupComponent } from './inactive-group/inactive-group.component';
 import { InactiveGroupDetailsComponent } from './inactive-group-details/inactive-group-details.component';
 import { InstructorsComponent } from './instructors/instructors.component';
+import { DetailsStudentComponent } from './details-student/details-student.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { InstructorsComponent } from './instructors/instructors.component';
     ActiveGroupComponent,
     ActiveStudentsComponent,
     WaitingListComponent,
-    InactiveGroupComponent
+    InactiveGroupComponent,
+    DetailsStudentComponent
 
   ],
   imports: [

@@ -7,6 +7,7 @@ import { InactiveGroupComponent } from './inactive-group/inactive-group.componen
 import { WaitingListComponent } from './waiting-list/waiting-list.component';
 import { ActiveStudentsComponent } from './active-students/active-students.component';
 import { InactiveGroupDetailsComponent } from './inactive-group-details/inactive-group-details.component';
+import { DetailsStudentComponent } from './details-student/details-student.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'admin', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'InactiveDetails/:id', component: InactiveGroupDetailsComponent },
       { path: 'Waiting', component: WaitingListComponent },
       { path: 'actStudent', component: ActiveStudentsComponent },
+      { path: 'Detalis', component: DetailsStudentComponent },
     ]
   },
 ];
