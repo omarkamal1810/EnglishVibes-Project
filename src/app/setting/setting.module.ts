@@ -10,6 +10,7 @@ import { InstructorsComponent } from './instructors/instructors.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InactiveDetailsComponent } from './inactive-details/inactive-details.component';
 import { DetailsStudentComponent } from './details-student/details-student.component';
+import { InstructorsDetailsComponent } from './instructors-details/instructors-details.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DetailsStudentComponent } from './details-student/details-student.compo
     InactiveGroupComponent,
     InactiveDetailsComponent,
     DetailsStudentComponent,
-    InstructorsComponent
+    InstructorsComponent,
+    InstructorsDetailsComponent
   ],
   imports: [
     CommonModule,
