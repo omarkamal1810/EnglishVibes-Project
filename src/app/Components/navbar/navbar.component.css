@@ -1,0 +1,13 @@
+
+ .logo{
+    font-size: 35px;
+    color: #c72092;
+    margin-left: 65px ;
+    cursor: pointer;
+    position: relative;
+    left: -50%;
+}
+
+ .logo span{
+    color: #6c14d0;
+}
