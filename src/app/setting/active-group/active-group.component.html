@@ -7,7 +7,8 @@
                     <th scope="col" width="50">#</th>
                     <th scope="col">Level</th>
                     <th scope="col">timeSlot</th>
-                    <th scope="col">instructor</th>
+                    <th scope="col">Student</th>
+                    <th scope="col">Instructor</th>
                 </tr>
             </thead>
             <tbody>
@@ -15,7 +16,14 @@
                     <th scope="row">{{i}}</th>
                     <td scope="row">{{group.level}}</td>
                     <td>{{group.timeSlot | date: 'dd/MM/yyyy'}}</td>
-                    <td>{{group.instructor}}</td>
+                    <td>
+                        <select class="form-select form-select-lg w-50 mx-auto" name="" id=""
+                            [disabled]="group.students.length <= 0">
+                            <option selected>Students Name</option>
+                            <option value="" *ngFor="let student of group.students">{{student.userName}}</option>
+                        </select>
+                    </td>
+                    <th>No Found</th>
                 </tr>
             </tbody>
         </table>

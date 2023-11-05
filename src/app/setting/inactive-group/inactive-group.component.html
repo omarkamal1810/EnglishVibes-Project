@@ -7,16 +7,24 @@
                     <th scope="col" width="50">#</th>
                     <th scope="col">Level</th>
                     <th scope="col">Count Of Students</th>
-                    <th scope="col">Show Students</th>
+                    <th scope="col">studyPlan</th>
+                    <th scope="col">Show Info</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let group of allInActiveGroup; let i = index">
+                <tr *ngFor="let group of allInActiveGroup; let i = index" class="position-relative">
                     <th scope="row">{{i}}</th>
                     <td>{{group.level}}</td>
                     <td>{{group.students.length}}</td>
-                    <td>show</td>
+                    <td>{{group.studyPlan}}</td>
+                    <td>
+                        <button [disabled]="group.students.length <= 0" class="btn btn-primary">
+                            <a [routerLink]="['/setting/admin/InactiveDetails',group.id]"
+                                class="text-white text-decoration-none">Details</a>
+                        </button>
+                    </td>
                 </tr>
+
             </tbody>
         </table>
     </div>
