@@ -5,10 +5,9 @@
     margin-left: 65px ;
     cursor: pointer;
     position: relative;
-    left: -4%;
+    left: -50%;
 }
 
  .logo span{
     color: #6c14d0;
-    text-decoration: underline;
 }
