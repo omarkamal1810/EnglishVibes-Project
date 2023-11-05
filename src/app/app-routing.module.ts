@@ -10,16 +10,15 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 
 const routes: Routes = [
-  {path:"", redirectTo:"home",pathMatch:"full"},
-  {path:"home", component:HomeComponent},
-  {path:"register", component:RegisterComponent},
-  {path:"login", component:LoginComponent},
-  {path:"instructor", component:InstructorComponent},
-  {path:"aboutus", component:AboutusComponent},
-  {path:"contact", component:ContactComponent},
-  {path:"setting", loadChildren:()=>import('./setting/setting.module').then((m)=>m.SettingModule)},
-  
-  {path:"**", component:NotFoundComponent},
+  { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "home", component: HomeComponent },
+  { path: "register", component: RegisterComponent },
+  { path: "login", component: LoginComponent },
+  { path: "instructor", component: InstructorComponent },
+  { path: "aboutus", component: AboutusComponent },
+  { path: "contact", component: ContactComponent },
+  { path: "setting", loadChildren: () => import('./setting/setting.module').then((m) => m.SettingModule) },
+  { path: "**", component: NotFoundComponent },
 
 ];
 

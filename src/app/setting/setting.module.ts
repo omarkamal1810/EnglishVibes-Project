@@ -7,6 +7,7 @@ import { ActiveGroupComponent } from './active-group/active-group.component';
 import { ActiveStudentsComponent } from './active-students/active-students.component';
 import { WaitingListComponent } from './waiting-list/waiting-list.component';
 import { InactiveGroupComponent } from './inactive-group/inactive-group.component';
+import { InactiveGroupDetailsComponent } from './inactive-group-details/inactive-group-details.component';
 import { InstructorsComponent } from './instructors/instructors.component';
 
 
@@ -16,14 +17,13 @@ import { InstructorsComponent } from './instructors/instructors.component';
     ActiveGroupComponent,
     ActiveStudentsComponent,
     WaitingListComponent,
-    InactiveGroupComponent,
-    InstructorsComponent
-  
+    InactiveGroupComponent
+
   ],
   imports: [
     CommonModule,
     SettingRoutingModule,
-    
+
   ]
 })
 export class SettingModule { }

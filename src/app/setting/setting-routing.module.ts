@@ -6,17 +6,21 @@ import { ActiveGroupComponent } from './active-group/active-group.component';
 import { InactiveGroupComponent } from './inactive-group/inactive-group.component';
 import { WaitingListComponent } from './waiting-list/waiting-list.component';
 import { ActiveStudentsComponent } from './active-students/active-students.component';
+import { InactiveGroupDetailsComponent } from './inactive-group-details/inactive-group-details.component';
 
 const routes: Routes = [
-{path:'',redirectTo:'admin',pathMatch:'full'},
-{path:"admin", component:AdminComponent , children:[
-  {path:'' , redirectTo:'admin',pathMatch:'full'},
-  {path:'ins' , component:InstructorsComponent},
-  {path:'active' , component:ActiveGroupComponent},
-  {path:'Inactive' , component:InactiveGroupComponent},
-  {path:'Waiting' , component:WaitingListComponent},
-  {path:'actStudent' , component:ActiveStudentsComponent},
-] },
+  { path: '', redirectTo: 'admin', pathMatch: 'full' },
+  {
+    path: "admin", component: AdminComponent, children: [
+      { path: '', redirectTo: 'admin', pathMatch: 'full' },
+      { path: 'ins', component: InstructorsComponent },
+      { path: 'active', component: ActiveGroupComponent },
+      { path: 'Inactive', component: InactiveGroupComponent },
+      { path: 'InactiveDetails/:id', component: InactiveGroupDetailsComponent },
+      { path: 'Waiting', component: WaitingListComponent },
+      { path: 'actStudent', component: ActiveStudentsComponent },
+    ]
+  },
 ];
 
 @NgModule({
