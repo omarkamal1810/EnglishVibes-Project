@@ -9,6 +9,7 @@ import { InactiveGroupComponent } from './inactive-group/inactive-group.componen
 import { InstructorsComponent } from './instructors/instructors.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InactiveDetailsComponent } from './inactive-details/inactive-details.component';
+import { DetailsStudentComponent } from './details-student/details-student.component';
 
 
 @NgModule({
@@ -18,8 +19,8 @@ import { InactiveDetailsComponent } from './inactive-details/inactive-details.co
     ActiveStudentsComponent,
     WaitingListComponent,
     InactiveGroupComponent,
-    InactiveDetailsComponent
-
+    InactiveDetailsComponent,
+    DetailsStudentComponent
   ],
   imports: [
     CommonModule,
