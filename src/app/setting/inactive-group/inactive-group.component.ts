@@ -27,7 +27,6 @@ export class InactiveGroupComponent {
     this._AdminService.getInActiveGroup().subscribe({
       next: (response) => {
         console.log(response)
-
         this.allInActiveGroup = response;
       }
     })

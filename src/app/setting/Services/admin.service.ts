@@ -15,23 +15,23 @@ export class AdminService {
   getActiveGroup(): Observable<any> {
     return this._HttpClient.get("https://localhost:44385/api/Group/active")
   }
-    
 
-  getActiveStudent():Observable<any>{
-   return this._HttpClient.get("https://localhost:44385/api/Student/active/all")
-   
+
+  getActiveStudent(): Observable<any> {
+    return this._HttpClient.get("https://localhost:44385/api/Student/active/all")
+
   }
 
 
-  getWaitingList():Observable<any>{
-   return this._HttpClient.get("https://localhost:44385/api/Student/waitinglist")
-   
+  getWaitingList(): Observable<any> {
+    return this._HttpClient.get("https://localhost:44385/api/Student/waitinglist")
+
   }
 
 
 
 
-  
+
   getinstructors(): Observable<any> {
     return this._HttpClient.get("https://localhost:44385/api/Instructor/all")
   }
@@ -39,7 +39,13 @@ export class AdminService {
     return this._HttpClient.get("https://localhost:44385/api/Instructor/{id}")
   }
 
+  getInActiveGroupById(id: any): Observable<any> {
+    return this._HttpClient.get(`https://localhost:44385/api/Group/${id}`)
+  }
 
-  
- 
+  generateInActiveGroup(id: any, data: any): Observable<any> {
+    return this._HttpClient.post(`https://localhost:44385/api/Group/${id}`, data)
+  }
+
+
 }
