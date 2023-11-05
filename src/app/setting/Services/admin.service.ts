@@ -28,10 +28,10 @@ export class AdminService {
 
   }
 
-  getDetailsStudent():Observable<any>{
-    
-   return this._HttpClient.get(`https://localhost:44385/api/Student/active/`)
-   
+  getDetailsStudent(id: any): Observable<any> {
+
+    return this._HttpClient.get(`https://localhost:44385/api/Student/active/${id}`)
+
   }
 
 

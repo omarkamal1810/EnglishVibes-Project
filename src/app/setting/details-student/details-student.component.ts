@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../Services/admin.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -9,9 +10,14 @@ import { AdminService } from '../Services/admin.service';
 })
 export class DetailsStudentComponent implements OnInit {
   DetailsStudent: any;
-  constructor(private _AdminService: AdminService) { }
+  studentId: any;
+
+  constructor(private _AdminService: AdminService, private _ActivatedRoute: ActivatedRoute) { }
   ngOnInit(): void {
-    this._AdminService.getDetailsStudent().subscribe({
+    this._ActivatedRoute.paramMap.subscribe((param) => {
+      this.studentId = param.get('id');
+    })
+    this._AdminService.getDetailsStudent(this.studentId).subscribe({
       next: (response) => {
         console.log(response)
         this.DetailsStudent = response;

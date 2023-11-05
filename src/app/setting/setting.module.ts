@@ -20,7 +20,8 @@ import { DetailsStudentComponent } from './details-student/details-student.compo
     WaitingListComponent,
     InactiveGroupComponent,
     InactiveDetailsComponent,
-    DetailsStudentComponent
+    DetailsStudentComponent,
+    InstructorsComponent
   ],
   imports: [
     CommonModule,

@@ -20,7 +20,7 @@ const routes: Routes = [
       { path: 'InactiveDetails/:id', component: InactiveDetailsComponent },
       { path: 'Waiting', component: WaitingListComponent },
       { path: 'actStudent', component: ActiveStudentsComponent },
-      { path: 'Detalis', component: DetailsStudentComponent },
+      { path: 'Detalis/:id', component: DetailsStudentComponent },
     ]
   },
 ];

@@ -13,18 +13,19 @@
                 </tr>
             </thead>
             <tbody>
-            
-                
+
+
                 <tr *ngFor="let Student of allActiveStudent; let i = index">
                     <th scope="row">{{i}}</th>
                     <td scope="row">{{Student.userName}}</td>
                     <td>{{Student.groupId}}</td>
                     <td>{{Student.currentLevel}}</td>
                     <td>{{Student.selectedStudyPlan}}</td>
-                    <td><a routerLink="/setting/admin/Detalis" class="btn btn-outline-success  btn-sm" role="button" aria-pressed="true"> Details</a></td>
+                    <td><a [routerLink]="['/setting/admin/Detalis', Student.id]" class="btn btn-outline-success  btn-sm"
+                            role="button" aria-pressed="true"> Details</a></td>
                 </tr>
-            
-                
+
+
             </tbody>
         </table>
     </div>
