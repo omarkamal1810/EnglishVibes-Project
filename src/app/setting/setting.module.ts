@@ -11,7 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InactiveDetailsComponent } from './inactive-details/inactive-details.component';
 import { DetailsStudentComponent } from './details-student/details-student.component';
 import { InstructorsDetailsComponent } from './instructors-details/instructors-details.component';
-
+import { ScheduleModule ,RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
+import { DayService, WeekService, WorkWeekService, MonthService, AgendaService,MonthAgendaService,TimelineViewsService,TimelineMonthService } from '@syncfusion/ej2-angular-schedule';
 
 @NgModule({
   declarations: [
@@ -23,12 +24,17 @@ import { InstructorsDetailsComponent } from './instructors-details/instructors-d
     InactiveDetailsComponent,
     DetailsStudentComponent,
     InstructorsComponent,
-    InstructorsDetailsComponent
+    InstructorsDetailsComponent,
+    
   ],
   imports: [
     CommonModule,
     SettingRoutingModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    ScheduleModule,
+    RecurrenceEditorModule
+  ],
+  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService],
+
 })
 export class SettingModule { }
