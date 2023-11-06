@@ -24,6 +24,7 @@ import { ContactComponent } from './Components/contact/contact.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { CommonModule } from '@angular/common';
 import { SettingModule } from './setting/setting.module';
+import { CoursesComponent } from './Components/courses/courses.component';
 
 
 
@@ -44,6 +45,8 @@ import { SettingModule } from './setting/setting.module';
     LoginComponent,
     ContactComponent,
     NotFoundComponent,
+    CoursesComponent,
+    
   
 
   ],

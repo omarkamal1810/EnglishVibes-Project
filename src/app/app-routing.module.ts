@@ -7,6 +7,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { CoursesComponent } from './Components/courses/courses.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: "aboutus", component: AboutusComponent },
   { path: "contact", component: ContactComponent },
   { path: "setting", loadChildren: () => import('./setting/setting.module').then((m) => m.SettingModule) },
+  { path: "courses", component: CoursesComponent },
   { path: "**", component: NotFoundComponent },
 
 ];

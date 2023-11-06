@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InactiveDetailsComponent } from './inactive-details/inactive-details.component';
 import { DetailsStudentComponent } from './details-student/details-student.component';
 import { InstructorsDetailsComponent } from './instructors-details/instructors-details.component';
+import { CompleteWaitinComponent } from './complete-waitin/complete-waitin.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { InstructorsDetailsComponent } from './instructors-details/instructors-d
     InactiveDetailsComponent,
     DetailsStudentComponent,
     InstructorsComponent,
-    InstructorsDetailsComponent
+    InstructorsDetailsComponent,
+    CompleteWaitinComponent
   ],
   imports: [
     CommonModule,
