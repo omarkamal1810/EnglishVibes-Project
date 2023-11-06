@@ -42,7 +42,7 @@ export class AdminService {
     return this._HttpClient.get("https://localhost:44385/api/Instructor/all")
   }
   getinstructorsid(id: any): Observable<any> {
-    return this._HttpClient.get(`https://localhost:44385/api/Instructor/${id}`)
+    return this._HttpClient.get(`https://localhost:44385/api/Instructor/schedule/${id}`)
   }
 
   getInActiveGroupById(id: any): Observable<any> {

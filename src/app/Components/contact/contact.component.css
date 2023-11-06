@@ -63,7 +63,15 @@ align-items: center;
     margin-bottom: 20px;
   }
   
-  form input,
+  form input
+  {
+    padding: 10px;
+    margin: 10px 0;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+
   form select
   {
     padding: 10px;
@@ -78,7 +86,12 @@ align-items: center;
     width: 700px;
     border: none;
     border-bottom: 1px solid #ccc;
+    
   }
+
+form ::placeholder{
+  border: none;
+}
   
   form button {
     background-color: #007bff;
