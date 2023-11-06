@@ -24,6 +24,7 @@ import { ContactComponent } from './Components/contact/contact.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { CommonModule } from '@angular/common';
 import { SettingModule } from './setting/setting.module';
+import { CoursesComponent } from './Components/courses/courses.component';
 import { ScheduleModule ,RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
 import { DayService, WeekService, WorkWeekService, MonthService, AgendaService,MonthAgendaService,TimelineViewsService,TimelineMonthService } from '@syncfusion/ej2-angular-schedule';
 
@@ -44,6 +45,8 @@ import { DayService, WeekService, WorkWeekService, MonthService, AgendaService,M
     LoginComponent,
     ContactComponent,
     NotFoundComponent,
+    CoursesComponent,
+    
   
 
   ],
