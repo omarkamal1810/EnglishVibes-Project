@@ -28,7 +28,7 @@ const routes: Routes = [
     
     
     
-      { path: 'completeWaiting', component: CompleteWaitinComponent },
+      { path: 'completeWaiting/:id', component: CompleteWaitinComponent },
     ]
   },
 ];
