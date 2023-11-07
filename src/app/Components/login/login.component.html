@@ -19,8 +19,8 @@
                 <label class="form-label" for="Email">Email Address</label>
                 <input formControlName="Email"type="email"class="form-control" />
                   <div  *ngIf="loginForm.get('Email')?.errors && loginForm.get('Email')?.touched">
-                    <p  *ngIf="loginForm.get('Email')?.getError('required')" class="m-0 p-0">Email is required</p>
-                    <p *ngIf="loginForm.get('Email')?.getError('Email')" class="m-0 p-0">Email isnt correct</p>
+                    <p  *ngIf="loginForm.get('Email')?.getError('required')" class="text-danger">Email is required</p>
+                    <p *ngIf="loginForm.get('Email')?.getError('email')" class="text-danger">Email is not correct</p>
                 </div>
               </div>
 
@@ -29,8 +29,8 @@
                 <label class="form-label" for="Password">Password</label>
                 <input formControlName="Password"  type="password" class="form-control"/>
                   <div *ngIf="loginForm.get('Password')?.errors && loginForm.get('Password')?.touched">
-                    <p *ngIf="loginForm.get('Password')?.getError('required')" class="m-0 p-0">password is required</p>
-                    <p *ngIf="loginForm.get('Password')?.getError('pattern')" class="m-0 p-0">password isn't correct</p>
+                    <p *ngIf="loginForm.get('Password')?.getError('required')" class="text-danger">password is required</p>
+                    <p *ngIf="loginForm.get('Password')?.getError('pattern')" class="text-danger">password isn't correct</p>
                 
                 </div>
               </div>
