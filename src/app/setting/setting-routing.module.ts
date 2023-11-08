@@ -10,6 +10,7 @@ import { InactiveDetailsComponent } from './inactive-details/inactive-details.co
 import { DetailsStudentComponent } from './details-student/details-student.component';
 import { InstructorsDetailsComponent } from './instructors-details/instructors-details.component';
 import { CompleteWaitinComponent } from './complete-waitin/complete-waitin.component';
+import { AdminDetailsComponent } from './admin-details/admin-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'admin', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
       { path: 'actStudent', component: ActiveStudentsComponent },
       { path: 'Detalis/:id', component: DetailsStudentComponent },
       { path: 'instructDetalis/:id', component: InstructorsDetailsComponent },
+      { path: 'admindetails', component: AdminDetailsComponent },
       
     
     

@@ -14,6 +14,7 @@ import { InstructorsDetailsComponent } from './instructors-details/instructors-d
 import { CompleteWaitinComponent } from './complete-waitin/complete-waitin.component';
 import { ScheduleModule ,RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
 import { DayService, WeekService, WorkWeekService, MonthService, AgendaService,MonthAgendaService,TimelineViewsService,TimelineMonthService } from '@syncfusion/ej2-angular-schedule';
+import { AdminDetailsComponent } from './admin-details/admin-details.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DayService, WeekService, WorkWeekService, MonthService, AgendaService,M
     InstructorsComponent,
     InstructorsDetailsComponent,
     CompleteWaitinComponent,
+    AdminDetailsComponent,
     
   ],
   imports: [
