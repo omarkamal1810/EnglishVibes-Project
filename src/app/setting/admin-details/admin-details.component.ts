@@ -40,12 +40,10 @@ export class AdminDetailsComponent {
   }
 
 
-  successMessage: string | null = null;
 
 
   handleregister(registerForm: FormGroup) {
     this.isloading = true;
-    this.successMessage = null;
     if (registerForm.valid) {
       console.log(registerForm);
 
@@ -54,7 +52,7 @@ export class AdminDetailsComponent {
           console.log(response)
           if (response.message === 'success') {
             this.isloading = false;
-            this._Router.navigate(['../../Components/login']);
+            this._Router.navigate(['../instructors']);
           }
         },
         error: (err) => {
