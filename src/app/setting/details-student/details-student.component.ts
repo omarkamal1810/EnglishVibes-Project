@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../Services/admin.service';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-details-student',
   templateUrl: './details-student.component.html',
