@@ -15,7 +15,7 @@ export class LoginComponent {
   apierror: string = '';
   loginForm: FormGroup = new FormGroup({
     Email: new FormControl(null, [Validators.required, Validators.email]),
-    Password: new FormControl(null, [Validators.required]),
+    Password: new FormControl(null, [Validators.required,  Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/)])
   });
 
 
@@ -66,55 +66,3 @@ export class LoginComponent {
 
 
 
-
-
-
-// import { Component } from '@angular/core';
-// import { FormControl, FormGroup, Validators } from '@angular/forms';
-// import { Router } from '@angular/router';
-// import { AuthService } from 'src/app/auth.service';
-
-
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrls: ['./login.component.css']
-// })
-// export class LoginComponent {
-//   constructor(private _AuthService:AuthService, private _Router:Router) {
-    
-    
-//   }
-//   isloading:boolean=false;
-//   apierror:string='';
-// loginForm:FormGroup=new FormGroup({
-//   Email:new FormControl(null, [Validators.required, Validators.email]),
-// password:new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z][a-z0-9]{5,10}$/)]),
-// });
-
-// handlelogin(loginForm:FormGroup)
-// {
-//   this.isloading=true;
-//   if(loginForm.valid)
-//   {
-//     console.log(loginForm)
-
-//    this._AuthService.login(loginForm.value).subscribe({
-//     next:(response)=>{
-//       if(response.message ==='success')
-//       {
-//         this.isloading = false;
-//     this._Router.navigate(['../home'])
-//       }
-//     } ,
-//     error:(err)=> 
-//     {
-//       this.isloading=false;
-//       this.apierror=err.error.errors.msg;
-      
-//     }
-
-//    })
-//   }
-// }
-// }

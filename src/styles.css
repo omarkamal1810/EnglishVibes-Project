@@ -1,4 +1,7 @@
+@import '../node_modules/@syncfusion/ej2-material-theme/styles/material.css';
 /* You can add global styles to this file, and also import other style files */
+@import 'node_modules/@syncfusion/ej2-material-theme/styles/material.css';
+
 :root {
     --fw-500:500;
     --color-start:#FFA121;
@@ -91,3 +94,4 @@ p {
 .owl-carousel .owl-nav .owl-prev::before {
     content: "\f060";
 }
+

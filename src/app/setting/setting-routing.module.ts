@@ -8,6 +8,8 @@ import { WaitingListComponent } from './waiting-list/waiting-list.component';
 import { ActiveStudentsComponent } from './active-students/active-students.component';
 import { InactiveDetailsComponent } from './inactive-details/inactive-details.component';
 import { DetailsStudentComponent } from './details-student/details-student.component';
+import { InstructorsDetailsComponent } from './instructors-details/instructors-details.component';
+import { CompleteWaitinComponent } from './complete-waitin/complete-waitin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'admin', pathMatch: 'full' },
@@ -21,6 +23,12 @@ const routes: Routes = [
       { path: 'Waiting', component: WaitingListComponent },
       { path: 'actStudent', component: ActiveStudentsComponent },
       { path: 'Detalis/:id', component: DetailsStudentComponent },
+      { path: 'instructDetalis/:id', component: InstructorsDetailsComponent },
+      
+    
+    
+    
+      { path: 'completeWaiting/:id', component: CompleteWaitinComponent },
     ]
   },
 ];

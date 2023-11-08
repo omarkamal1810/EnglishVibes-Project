@@ -24,12 +24,7 @@ export class InstructorsComponent implements OnInit {
       }
     });
 
-    this._AdminService.getinstructorsid().subscribe({
-      next: (response) => {
-        console.log(response)
-        this.allinstrutorsid = response;
-      }
-    });
+   
   }
 
 }
