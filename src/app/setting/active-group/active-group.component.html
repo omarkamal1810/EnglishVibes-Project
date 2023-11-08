@@ -15,12 +15,12 @@
                 <tr *ngFor="let group of allActiveGroup; let i = index">
                     <th scope="row">{{i}}</th>
                     <td scope="row">{{group.level}}</td>
-                    <td>{{group.timeSlot | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{group.timeSlot}}</td>
                     <td>
                         <select class="form-select form-select-lg w-50 mx-auto" name="" id=""
                             [disabled]="group.students.length <= 0">
                             <option selected>Students Name</option>
-                            <option value="" *ngFor="let student of group.students">{{student.userName}}</option>
+                            <option value="" *ngFor="let student of group.students">{{student}}</option>
                         </select>
                     </td>
                     <th>No Found</th>

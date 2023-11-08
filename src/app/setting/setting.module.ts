@@ -12,9 +12,10 @@ import { InactiveDetailsComponent } from './inactive-details/inactive-details.co
 import { DetailsStudentComponent } from './details-student/details-student.component';
 import { InstructorsDetailsComponent } from './instructors-details/instructors-details.component';
 import { CompleteWaitinComponent } from './complete-waitin/complete-waitin.component';
-import { ScheduleModule ,RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
-import { DayService, WeekService, WorkWeekService, MonthService, AgendaService,MonthAgendaService,TimelineViewsService,TimelineMonthService } from '@syncfusion/ej2-angular-schedule';
+import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
+import { DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService } from '@syncfusion/ej2-angular-schedule';
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
+import { DatePipe } from '@angular/common'; // Import DatePipe
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { AdminDetailsComponent } from './admin-details/admin-details.component';
     InstructorsDetailsComponent,
     CompleteWaitinComponent,
     AdminDetailsComponent,
-    
+
   ],
   imports: [
     CommonModule,
@@ -38,7 +39,7 @@ import { AdminDetailsComponent } from './admin-details/admin-details.component';
     ScheduleModule,
     RecurrenceEditorModule
   ],
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService],
+  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService, DatePipe],
 
 })
 export class SettingModule { }

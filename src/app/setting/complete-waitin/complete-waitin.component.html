@@ -1,52 +1,22 @@
-
-
 <div class="p-4 bg-white rounded-3 shadow">
-  <h2 class="mb-3">Complete Information</h2>
-  <form [formGroup]="waitform" (ngSubmit)="sendGroup(waitform)">
-      <input type="hidden" [(ngModel)]="waitId" formControlName="id" name="id">
-      <div class="form-outline form-group mb-4">
-          <label class="form-label" for="StartDate">StartDate</label>
-          <input formControlName="StartDate" name="StartDate" id="StartDate" type="date" class="form-control mb-3"
-              [min]="formattedDate">
-          <p *ngIf="StartDate?.errors?.['required'] && StartDate?.touched" class="alert alert-danger">StartDate Is
-              Required</p>
-      </div>
-      <div class="form-outline form-group mb-4">
-          <label class="form-label" for="TimeSlot">TimeSlot</label>
-          <input formControlName="TimeSlot" name="TimeSlot" id="TimeSlot" type="time" class="form-control mb-3"
-              [min]="formattedDate">
-          <p *ngIf="TimeSlot?.errors?.['required'] && TimeSlot?.touched" class="alert alert-danger">TimeSlot Is
-              Required</p>
+    <h2 class="mb-3">Complete Information</h2>
+    <form [formGroup]="waitform" (ngSubmit)="sendStudent(waitform)">
+        <div class="form-outline form-group mb-4">
+            <label class="form-label" for="level">level</label>
+            <input formControlName="level" name="level" id="level" type="text" class="form-control mb-3"
+                [min]="formattedDate">
+            <p *ngIf="level?.errors?.['required'] && level?.touched" class="alert alert-danger">level Is
+                Required</p>
+        </div>
+        <div class="form-outline form-group mb-4">
+            <label class="form-label" for="payedAmount">payedAmount</label>
+            <input formControlName="payedAmount" name="payedAmount" id="payedAmount" type="number"
+                class="form-control mb-3" [min]="formattedDate">
+            <p *ngIf="payedAmount?.errors?.['required'] && payedAmount?.touched" class="alert alert-danger">payedAmount
+                Is
+                Required</p>
 
-      </div>
-      <div class="form-outline form-group mb-4">
-          <label class="form-label" for="instructorId">instructor</label>
-          <select class="form-select mb-3" aria-label="Default select example" formControlName="instructorId"
-              name="instructorId" id="instructorId">
-              <option [value]="null" disabled>Choose Instructor</option>
-              <option *ngFor="let instructor of wait?.instructors" [value]="instructor.id">{{instructor.userName}}
-              </option>
-          </select>
-          <p *ngIf="instructorId?.errors?.['required'] && instructorId?.touched" class="alert alert-danger">instructor
-              Is Required</p>
-      </div>
-      <div class="form-outline form-group mb-4">
-          <label class="form-label" for="d1">Day1</label>
-          <select class="form-select mb-3" aria-label="Default select example" formControlName="d1" name="d1" id="d1">
-              <option [value]="null" disabled>Choose Day1</option>
-              <option *ngFor="let day of dayOfWeek; let i = index" value="{{i}}">{{day}}</option>
-          </select>
-          <p *ngIf="d1?.errors?.['required'] && d1?.touched" class="alert alert-danger">Day1 Is Required</p>
-      </div>
-      <div class="form-outline form-group mb-4">
-          <label class="form-label" for="d2">Day2</label>
-          <select class="form-select mb-3" aria-label="Default select example" formControlName="d2" name="d2" id="d2">
-              <option [value]="null" disabled>Choose Day2</option>
-              <option *ngFor="let day of dayOfWeek; let i = index" value="{{i}}">{{day}}</option>
-          </select>
-          <p *ngIf="d2?.errors?.['required'] && d2?.touched" class="alert alert-danger">Day2
-              Is Required</p>
-      </div>
-      <button [disabled]="waitform.invalid || wait?.students.length == 4" class="btn btn-primary">Complete</button>
-  </form>
+        </div>
+        <button [disabled]="waitform.invalid" class="btn btn-primary">Complete</button>
+    </form>
 </div>

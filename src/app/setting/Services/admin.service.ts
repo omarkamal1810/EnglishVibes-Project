@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import {jwtDecode} from 'jwt-decode';
 export class AdminService {
 
   constructor(private _HttpClient: HttpClient) { }
-  userData= null;
+  userData = null;
 
   getInActiveGroup(): Observable<any> {
     return this._HttpClient.get("https://localhost:44385/api/Group/inactive")
@@ -37,21 +37,19 @@ export class AdminService {
   }
 
 
-  decodeuserdata()
-  {
-    let encodedToken=JSON.stringify(localStorage.getItem('userToken'))
-    let decodedtoken:any =jwtDecode(encodedToken);
+  decodeuserdata() {
+    let encodedToken = JSON.stringify(localStorage.getItem('userToken'))
+    let decodedtoken: any = jwtDecode(encodedToken);
     console.log(decodedtoken);
-    this.userData=decodedtoken;
+    this.userData = decodedtoken;
   }
-  
-  
-  
-    register(userData:object):Observable<any>
-    {
-  return this._HttpClient.post('https://localhost:44385/api/Account/register/admin',userData)
-    }
-  
+
+
+
+  register(userData: object): Observable<any> {
+    return this._HttpClient.post('https://localhost:44385/api/Account/register/admin', userData)
+  }
+
 
 
   getinstructors(): Observable<any> {
@@ -66,8 +64,9 @@ export class AdminService {
   }
 
   generateInActiveGroup(id: any, data: any): Observable<any> {
-    return this._HttpClient.put(`https://localhost:44385/api/Group/${id}`, data)
+    return this._HttpClient.post(`https://localhost:44385/api/Group/${id}`, data)
   }
-
-
+  generateInActiveStudent(id: any, data: any): Observable<any> {
+    return this._HttpClient.put(`https://localhost:44385/api/Student/${id}`, data)
+  }
 }

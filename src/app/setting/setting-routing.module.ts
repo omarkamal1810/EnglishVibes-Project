@@ -11,25 +11,26 @@ import { DetailsStudentComponent } from './details-student/details-student.compo
 import { InstructorsDetailsComponent } from './instructors-details/instructors-details.component';
 import { CompleteWaitinComponent } from './complete-waitin/complete-waitin.component';
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
+import { isAdminGuard } from './Guards/is-admin.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'admin', pathMatch: 'full' },
   {
     path: "admin", component: AdminComponent, children: [
       { path: '', redirectTo: 'admin', pathMatch: 'full' },
-      { path: 'ins', component: InstructorsComponent },
-      { path: 'active', component: ActiveGroupComponent },
-      { path: 'Inactive', component: InactiveGroupComponent },
-      { path: 'InactiveDetails/:id', component: InactiveDetailsComponent },
-      { path: 'Waiting', component: WaitingListComponent },
-      { path: 'actStudent', component: ActiveStudentsComponent },
-      { path: 'Detalis/:id', component: DetailsStudentComponent },
-      { path: 'instructDetalis/:id', component: InstructorsDetailsComponent },
-      { path: 'admindetails', component: AdminDetailsComponent },
-      
-    
-    
-    
+      { path: 'ins', component: InstructorsComponent, canActivate: [isAdminGuard] },
+      { path: 'active', component: ActiveGroupComponent, canActivate: [isAdminGuard] },
+      { path: 'Inactive', component: InactiveGroupComponent, canActivate: [isAdminGuard] },
+      { path: 'InactiveDetails/:id', component: InactiveDetailsComponent, canActivate: [isAdminGuard] },
+      { path: 'Waiting', component: WaitingListComponent, canActivate: [isAdminGuard] },
+      { path: 'actStudent', component: ActiveStudentsComponent, canActivate: [isAdminGuard] },
+      { path: 'Detalis/:id', component: DetailsStudentComponent, canActivate: [isAdminGuard] },
+      { path: 'instructDetalis/:id', component: InstructorsDetailsComponent, canActivate: [isAdminGuard] },
+      { path: 'admindetails', component: AdminDetailsComponent, canActivate: [isAdminGuard] },
+
+
+
+
       { path: 'completeWaiting/:id', component: CompleteWaitinComponent },
     ]
   },

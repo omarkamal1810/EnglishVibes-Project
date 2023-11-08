@@ -30,7 +30,6 @@ export class InactiveDetailsComponent {
       d2: [null, [Validators.required]]
     })
   }
-  // [Validators.required]
   ngOnInit(): void {
     this._ActivatedRoute.paramMap.subscribe((param) => {
       this.groupId = param.get('id');
@@ -45,9 +44,17 @@ export class InactiveDetailsComponent {
 
 
   sendGroup(formData: FormGroup) {
+    let dateeeee = {
+      id: formData.value.id,
+      StartDate: formData.value.StartDate,
+      instructorId: formData.value.instructorId,
+      TimeSlot: formData.value.TimeSlot + ':00',
+      day1: formData.value.d1,
+      day2: formData.value.d2,
+    };
     console.log(this.groupId)
     console.log(formData.value)
-    this._AdminService.generateInActiveGroup(this.groupId, formData.value).subscribe({
+    this._AdminService.generateInActiveGroup(this.groupId, dateeeee).subscribe({
       next: (respone) => {
         console.log(respone);
       },

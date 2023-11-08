@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../Services/admin.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-active-group',
@@ -8,7 +9,7 @@ import { AdminService } from '../Services/admin.service';
 })
 export class ActiveGroupComponent implements OnInit {
   allActiveGroup: any;
-  constructor(private _AdminService: AdminService) { }
+  constructor(private _AdminService: AdminService, private datePipe: DatePipe) { }
   ngOnInit(): void {
     this._AdminService.getActiveGroup().subscribe({
       next: (response) => {
