@@ -30,7 +30,7 @@ export class InactiveDetailsComponent {
       d2: [null, [Validators.required]]
     })
   }
-
+  // [Validators.required]
   ngOnInit(): void {
     this._ActivatedRoute.paramMap.subscribe((param) => {
       this.groupId = param.get('id');
