@@ -66,7 +66,7 @@ export class AdminService {
   }
 
   generateInActiveGroup(id: any, data: any): Observable<any> {
-    return this._HttpClient.post(`https://localhost:44385/api/Group/${id}`, data)
+    return this._HttpClient.put(`https://localhost:44385/api/Group/${id}`, data)
   }
 
 
