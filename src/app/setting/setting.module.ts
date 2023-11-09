@@ -37,7 +37,7 @@ import { DatePipe } from '@angular/common'; // Import DatePipe
     SettingRoutingModule,
     ReactiveFormsModule,
     ScheduleModule,
-    RecurrenceEditorModule
+    RecurrenceEditorModule,
   ],
   providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService, DatePipe],
 
