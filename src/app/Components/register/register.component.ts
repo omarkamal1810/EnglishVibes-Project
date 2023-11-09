@@ -69,7 +69,7 @@ export class RegisterComponent {
         },
         error: (err) => {
           this.isloading = false;
-
+          this.apierror = err.error[''];
           console.log(err.error);
         },
       });

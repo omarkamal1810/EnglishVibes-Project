@@ -42,7 +42,7 @@ export class LoginComponent {
         },
         error: (err) => {
           this.isloading = false;
-          this.apierror = err.error.errors;
+          this.apierror = err.error;
           console.log(this.apierror);
         },
       });
