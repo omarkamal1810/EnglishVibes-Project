@@ -12,35 +12,48 @@ export class RegisterComponent {
   constructor(private _AuthService: AuthService, private _Router: Router) {}
   isloading: boolean = false;
   apierror: string = '';
-  registerForm: FormGroup = new FormGroup({
-    Age: new FormControl(null, [Validators.required, Validators.min(16), Validators.max(80)]),
-    UserName: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-    Email: new FormControl(null, [Validators.required, Validators.email]),
-    Password: new FormControl(null, [Validators.required,  Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/)]),
-    ConfirmPassword: new FormControl(null, [Validators.required,  Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/)]),
-    PhoneNumber: new FormControl(null, [Validators.required, Validators.pattern(/^01[0125][0-9]{8}$/)]),
-    StudyPlan: new FormControl(null, [Validators.required]),
-  }, { validators: this.ConfirmPasswordMatch });
+  registerForm: FormGroup = new FormGroup(
+    {
+      Age: new FormControl(null, [
+        Validators.required,
+        Validators.min(16),
+        Validators.max(80),
+      ]),
+      UserName: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(20),
+      ]),
+      Email: new FormControl(null, [Validators.required, Validators.email]),
+      Password: new FormControl(null, [
+        Validators.required,
+        Validators.pattern(
+          /^(?=.*[A-Z])|(?=.*[a-z])|(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/
+        ),
+      ]),
+      ConfirmPassword: new FormControl(null, [Validators.required]), //,  Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/)]),
+      PhoneNumber: new FormControl(null, [
+        Validators.required,
+        Validators.pattern(/^01[0125][0-9]{8}$/),
+      ]),
+      StudyPlan: new FormControl(null, [Validators.required]),
+    },
+    { validators: this.ConfirmPasswordMatch }
+  );
 
-
-  ConfirmPasswordMatch(registerForm:any)
-  {
+  ConfirmPasswordMatch(registerForm: any) {
     let passwordcontrol = registerForm.get('Password');
-    let ConfirmPasswordcontrol=registerForm.get('ConfirmPassword');
+    let ConfirmPasswordcontrol = registerForm.get('ConfirmPassword');
 
-    if(passwordcontrol.value === ConfirmPasswordcontrol.value)
-    {
-return null;
-    }
-    else
-    {
-      ConfirmPasswordcontrol.setErrors({passwordmatch : 'password and confirmpassword didnt match'})
-      return {passwordmatch : 'password and confirmpassword didnt match'}
+    if (passwordcontrol.value === ConfirmPasswordcontrol.value) {
+      return null;
+    } else {
+      ConfirmPasswordcontrol.setErrors({
+        passwordmatch: 'password and confirmpassword didnt match',
+      });
+      return { passwordmatch: 'password and confirmpassword didnt match' };
     }
   }
-
-
-
 
   handleregister(registerForm: FormGroup) {
     this.isloading = true;
@@ -56,27 +69,10 @@ return null;
         },
         error: (err) => {
           this.isloading = false;
-        
+
           console.log(err.error);
         },
       });
     } else console.log('Not Valid');
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,31 +1,39 @@
 <div class="row my-5">
-    <h3 class="fs-4 mb-3">Active Group </h3>
-    <div class="col">
-        <table class="table bg-white rounded shadow-sm  table-hover">
-            <thead>
-                <tr>
-                    <th scope="col" width="50">#</th>
-                    <th scope="col">Level</th>
-                    <th scope="col">timeSlot</th>
-                    <th scope="col">Student</th>
-                    <th scope="col">Instructor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let group of allActiveGroup; let i = index">
-                    <th scope="row">{{i}}</th>
-                    <td scope="row">{{group.level}}</td>
-                    <td>{{group.timeSlot}}</td>
-                    <td>
-                        <select class="form-select form-select-lg w-50 mx-auto" name="" id=""
-                            [disabled]="group.students.length <= 0">
-                            <option selected>Students Name</option>
-                            <option value="" *ngFor="let student of group.students">{{student}}</option>
-                        </select>
-                    </td>
-                    <th>No Found</th>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <h3 class="fs-4 mb-3">Active Group</h3>
+  <div class="col">
+    <table class="table bg-white rounded shadow-sm table-hover">
+      <thead>
+        <tr>
+          <th scope="col" width="50">#</th>
+          <th scope="col">Group Id</th>
+          <th scope="col">Level</th>
+          <th scope="col">timeSlot</th>
+          <th scope="col">Student</th>
+          <th scope="col">Instructor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let group of allActiveGroup; let i = index">
+          <th scope="row">{{ i }}</th>
+          <th scope="row">{{ group.id }}</th>
+          <td scope="row">{{ group.level }}</td>
+          <td>{{ group.timeSlot }}</td>
+          <td>
+            <select
+              class="form-select form-select-lg w-50 mx-auto"
+              name=""
+              id=""
+              [disabled]="group.students.length <= 0"
+            >
+              <option selected>Students Name</option>
+              <option value="" *ngFor="let student of group.students">
+                {{ student }}
+              </option>
+            </select>
+          </td>
+          <th>No Found</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
