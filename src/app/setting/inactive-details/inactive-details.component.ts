@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { AdminService } from '../Services/admin.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-inactive-details',
@@ -20,7 +21,7 @@ export class InactiveDetailsComponent {
   month = (this.currentDate.getMonth() + 1).toString().padStart(2, '0');
   day = this.currentDate.getDate().toString().padStart(2, '0');
   formattedDate = `${this.year}-${this.month}-${this.day}`
-  constructor(private _AdminService: AdminService, private _ActivatedRoute: ActivatedRoute, private _FormBuilder: FormBuilder) {
+  constructor(private _AdminService: AdminService, private _ActivatedRoute: ActivatedRoute, private _FormBuilder: FormBuilder, private toastr: ToastrService, private _Router: Router) {
     this.groupform = _FormBuilder.group({
       id: [null, [Validators.required]],
       StartDate: [null, [Validators.required,]],
@@ -52,14 +53,17 @@ export class InactiveDetailsComponent {
       day1: formData.value.d1,
       day2: formData.value.d2,
     };
-    console.log(this.groupId)
-    console.log(formData.value)
     this._AdminService.generateInActiveGroup(this.groupId, dateeeee).subscribe({
       next: (respone) => {
-        console.log(respone);
+        this.toastr.success('Success', 'Completed Data', {
+          positionClass: 'toast-bottom-right'
+        });
+        this._Router.navigate(["/setting/admin/Inactive"])
       },
       error: (error) => {
-        console.log(error)
+        this.toastr.error('Sorry', 'Try Again', {
+          positionClass: 'toast-bottom-right'
+        })
       }
     })
   }

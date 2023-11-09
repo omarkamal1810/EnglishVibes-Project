@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { AdminService } from '../Services/admin.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-complete-waitin',
@@ -23,7 +24,7 @@ export class CompleteWaitinComponent {
   day = this.currentDate.getDate().toString().padStart(2, '0');
   formattedDate = `${this.year}-${this.month}-${this.day}`
 
-  constructor(private _AdminService: AdminService, private _ActivatedRoute: ActivatedRoute, private _FormBuilder: FormBuilder) {
+  constructor(private _AdminService: AdminService, private _ActivatedRoute: ActivatedRoute, private _FormBuilder: FormBuilder, private toastr: ToastrService, private _Router: Router) {
     this.waitform = _FormBuilder.group({
       level: [null, [Validators.required,]],
       payedAmount: [null, [Validators.required]],
@@ -41,10 +42,15 @@ export class CompleteWaitinComponent {
     console.log(formData.value)
     this._AdminService.generateInActiveStudent(this.waitId, formData.value).subscribe({
       next: (response) => {
-        console.log(response)
+        this.toastr.success('Success', 'Completed Data', {
+          positionClass: 'toast-bottom-right'
+        });
+        this._Router.navigate(["/setting/admin/Waiting"])
       },
       error: (error) => {
-        console.log(error)
+        this.toastr.error('Sorry', 'Try Again', {
+          positionClass: 'toast-bottom-right'
+        })
       }
     })
   }
