@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from '../Services/admin.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-admin-details',
@@ -13,7 +14,7 @@ import { AdminService } from '../Services/admin.service';
 
 
 export class AdminDetailsComponent {
-  constructor(private AdminService: AdminService, private _Router: Router) { }
+  constructor(private AdminService: AdminService, private _Router: Router, private toastr: ToastrService) { }
   isloading: boolean = false;
   apierror: string = '';
   registerForm: FormGroup = new FormGroup({
@@ -50,12 +51,18 @@ export class AdminDetailsComponent {
       this.AdminService.register(registerForm.value).subscribe({
         next: (response) => {
           console.log(response)
-          if (response.message === 'success') {
+          if (response.message === 'Admin Registered') {
+            this.toastr.success('Success', 'Admin Added', {
+              positionClass: 'toast-bottom-right'
+            });
             this.isloading = false;
-            this._Router.navigate(['../instructors']);
+            this._Router.navigate(['/setting/admin/ins']);
           }
         },
         error: (err) => {
+          this.toastr.error('Sorry', 'Try Again', {
+            positionClass: 'toast-bottom-right'
+          })
           this.isloading = false;
 
           console.log(err.error);
