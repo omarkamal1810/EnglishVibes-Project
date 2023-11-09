@@ -115,16 +115,11 @@
                 </div>
   
                 <!-- Submit button -->
-                <div class="form-group">
-                  <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary btn-block mb-4">
-                    <i *ngIf="isloading" class="fas fa-spinner fa-spin"></i> 
-                    <span *ngIf="!isloading">Sign up</span> 
-                  </button>
-                  <!-- <div *ngIf="successMessage" class="alert alert-success">
-                    {{ successMessage }}
-                  </div> -->
-                </div>
-                      
+                <button [disabled]="registerForm.invalid || isloading"  type="submit" class="btn btn-primary btn-block mb-4">
+                  <i  *ngIf="isloading">Success</i> 
+                  <span *ngIf="!isloading">Sign up</span> 
+                </button>
+                
                 <!-- Register buttons -->
                 <div class="text-center">
                   <p>or sign up with:</p>

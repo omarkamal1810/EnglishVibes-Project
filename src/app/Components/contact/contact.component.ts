@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class ContactComponent {
   imgsrc: string ='assets/images/cont.png';
 
+  isloading: boolean = true;
+
 }
